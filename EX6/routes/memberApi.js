@@ -8,6 +8,7 @@ router.post('/register',function (req,res){
         name: req.body.name,
         account: req.body.account,
         password: req.body.password,
+        photos: []
     });
     memberModel.count({account:req.body.account},function (err,data){  //data是計算後的參數數量 用count找出帳號相符的資料
         if(data>0){
