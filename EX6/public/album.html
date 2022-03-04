@@ -27,6 +27,22 @@
             <button class="commonbtn mag20pxbtn" onclick="upload()">上傳照片</button>
         </div>
         <div class="form-style w70div">
+            <h1>相簿</h1>
+            <div class="w100div">
+                <button id="selBtn" class="commonbtn selBtn" onclick="onSelect()">選取</button>
+                <button id="cnBtn" class="commonbtn cnBtn" onclick="cnSelect()">取消</button>
+                <button id="delBtn" class="commonbtn delBtn" onclick="onDelete()">刪除</button>
+            </div>
+            <fieldset>
+                <legend>我的相片</legend>
+                <div id="albumForm"></div>
+            </fieldset>
+        </div>
+        <div id="preview" class="preview_content">
+            <a href="JavaScript:void(0)" class="closepreviewlink" onclick="closeDialog()">關閉視窗</a>
+            <img id="image" src="/public/photos/1646363558484.gif"/>
+        </div>
+        <div id="previewbg" class="black_overlay">
 
         </div>
     </div>
