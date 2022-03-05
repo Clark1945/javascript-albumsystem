@@ -14,7 +14,7 @@ var storage=multer.diskStorage({
 });
 var upload=multer({storage:storage});
 
-router.post("/upload",upload.single("file"),function(req,res,next){
+router.post("/upload",upload.single("file"),function(req,res,next){//對name=file的檔案做上傳
     memberModel.findOne({account:req.query.account},function(err,data){
         data.photos.push(req.file.filename);//檔案名稱存入陣列
         data.markModified('photos');
@@ -52,7 +52,7 @@ router.post("/delete",function(req,res,next){
             for(var i in images){
                 var index=data.photos.indexOf(images[i]);
                 if(index>-1){
-                    data.photos.splice(index,1);
+                    data.photos.splice(index,1);//刪除
                 }
             }
             //data.markModified("photos");

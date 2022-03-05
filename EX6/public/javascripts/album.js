@@ -39,7 +39,7 @@ function readURL(input){
         reader.onload=function(e){
             $("u_img").attr('src',e.target.result);//src變換
         }
-        reader.readAsDataURL(input.files[0]);//讀取回傳(base64編碼)
+        reader.readAsDataURL(input.files[0]);//讀取傳入檔案(base64編碼)
     }
 }
 function initAlbum(data){
@@ -97,10 +97,10 @@ function selectImg(img,a){
     if(status=="onSelect"){
         $(a).children().toggleClass("u_img_file");
         if(deleteImg.indexOf(img)>-1){
-            deleteImg.splice(deleteImg.indexOf(img),1);
+            deleteImg.splice(deleteImg.indexOf(img),1);//取消勾選
         }
         else{
-            deleteImg.push(img);
+            deleteImg.push(img);//勾選
         }
     }else{
         $('#preview').attr('style','display:block');
